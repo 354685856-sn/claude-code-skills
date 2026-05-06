@@ -1,10 +1,14 @@
-# 楠哥的 Claude Code Skills
+# Claude Code Skills
 
-**作者**: 354685856-sn (楠哥)
+Custom Claude Code skills for repeatable agent harness workflows: code review, testing, security checks, documentation, context optimization, product verification, and task execution.
 
-基于 Thariq Shihipar (Claude Code 团队成员) 的 "Lessons from Building Claude Code: How We Use Skills" 文章创建的 Skills 集合。
+## Why
 
-## Skills 列表 (按 Thariq 9 大类型分类)
+Claude Code becomes more useful when repeatable work is captured as skills instead of rewritten as one-off prompts.
+
+This repository collects reusable skills for common software engineering and AI agent workflows. The long-term goal is to turn practical experience into small, portable instructions that can be installed, tested, improved, and shared.
+
+## Skills
 
 | Skill | 类型 | 用途 |
 |-------|------|------|
@@ -25,30 +29,56 @@
 | [superpowers](./superpowers/) | 增强型开发助手 |
 | [prompt-cache-optimize](./prompt-cache-optimize/) | Prompt Caching 优化 |
 
-## 使用方法
+## Repository layout
+
+Each skill follows the same basic shape:
+
+```text
+skill-name/
+└── SKILL.md
+```
+
+`SKILL.md` is the entrypoint Claude Code reads when the skill is selected. Keep each skill focused, concrete, and easy to verify.
+
+## Install
 
 ```bash
-# 在 Claude Code 中使用
+git clone https://github.com/354685856-sn/claude-code-skills.git
+mkdir -p ~/.claude/skills
+cp -R claude-code-skills/* ~/.claude/skills/
+```
+
+## Usage examples
+
+```bash
 /claude "使用 product-verify skill 审查这个 PR"
 /claude "使用 test-gen skill 为这个函数生成测试"
 /claude "使用 security-check skill 检查安全问题"
 ```
 
-## 安装
+## Quality checklist
 
-```bash
-# 克隆到本地
-git clone https://github.com/354685856-sn/claude-code-skills.git
+Before adding or changing a skill:
 
-# 复制到 .claude 目录
-cp -r claude-code-skills/* ~/.claude/skills/
-```
+- The skill has one clear job.
+- The instructions are operational, not just conceptual.
+- The expected input and output are obvious.
+- The skill avoids unnecessary context and long generic guidance.
+- The skill can be tested on a real task.
 
-## 参考
+## Roadmap
+
+- [ ] Add examples for every skill.
+- [ ] Add a compatibility note for current Claude Code skill directory conventions.
+- [ ] Add a test task for each skill.
+- [ ] Split broad skills into smaller, verifiable workflows where needed.
+- [ ] Publish a first release after the skill set is reviewed.
+
+## References
 
 - [Thariq Shihipar - How We Use Skills](https://www.linkedin.com/pulse/lessons-from-building-claude-code-how-we-use-skills-thariq-shihipar-iclmc)
 - [Thariq Shihipar - Prompt Caching Is Everything](https://x.com/trq212/status/2024574133011673516)
 
-## 许可证
+## License
 
 MIT
