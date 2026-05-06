@@ -36,9 +36,17 @@ Each skill follows the same basic shape:
 ```text
 skill-name/
 └── SKILL.md
+examples/
+├── usage-examples.md
+└── verification-tasks.md
 ```
 
 `SKILL.md` is the entrypoint Claude Code reads when the skill is selected. Keep each skill focused, concrete, and easy to verify.
+
+## Examples and verification
+
+- [Usage examples](./examples/usage-examples.md) gives one practical call pattern for every skill.
+- [Verification tasks](./examples/verification-tasks.md) gives small tasks for checking whether key skills produce concrete output.
 
 ## Install
 
@@ -68,9 +76,9 @@ Before adding or changing a skill:
 
 ## Roadmap
 
-- [ ] Add examples for every skill.
+- [x] Add examples for every skill.
+- [x] Add verification tasks for key skills.
 - [ ] Add a compatibility note for current Claude Code skill directory conventions.
-- [ ] Add a test task for each skill.
 - [ ] Split broad skills into smaller, verifiable workflows where needed.
 - [ ] Publish a first release after the skill set is reviewed.
 
